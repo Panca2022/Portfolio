@@ -1,0 +1,151 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Floating stars background */
+.stars {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://transparenttextures.com/patterns/stardust.png');
+  opacity: 0.06;
+  animation: moveBackground 100s linear infinite;
+  z-index: 0;
+}
+
+/* Container */
+.hero-container {
+  z-index: 1;
+  max-width: 900px;
+  animation: fadeInUp 2s ease;
+}
+
+/* Highlight Name */
+.highlight {
+  color: #00f7ff;
+  font-weight: bold;
+}
+
+/* Headings */
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.hero h2 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #c0c0c0;
+  margin-bottom: 20px;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.hero-buttons {
+  margin: 30px 0;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 14px 28px;
+  margin: 0 10px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+.btn.outline {
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+  background: transparent;
+}
+
+.btn.outline:hover {
+  background: #00f7ff;
+  color: #0f0c29;
+}
+
+.btn.solid {
+  background: linear-gradient(135deg, #00f7ff, #00c6ff);
+  color: #0f0c29;
+  border: none;
+}
+
+.btn.solid:hover {
+  filter: brightness(1.1);
+}
+
+/* Links */
+.hero-links a {
+  margin: 0 15px;
+  font-weight: 500;
+  color: #a0aec0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.hero-links a:hover {
+  color: #00f7ff;
+  text-shadow: 0 0 8px #00f7ff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .hero h2 { font-size: 1.1rem; }
+  .btn { padding: 10px 20px; margin: 8px 5px; }
+  .tagline { font-size: 0.95rem; }
+}
+
+/* REQUIRED: Make particles visible and full-screen */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
